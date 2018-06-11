@@ -2,6 +2,9 @@
 
 #oob = "CZE_1936"
 
+set_stability = 0.4
+set_war_support = 0.6
+
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
@@ -17,6 +20,12 @@ set_technology = {
 	early_bomber = 1
 	CAS1 = 1
 }
+
+set_country_flag = westernization_1_completed_flag
+set_country_flag = completed_industry_flag
+set_country_flag = completed_modern_flag
+set_country_flag = completed_diplo_flag
+set_country_flag = westernization_5_completed_flag
 
 set_research_slots = 3
 
@@ -105,26 +114,5 @@ create_corps_commander = {
 	gfx = "GFX_Portrait_czechoslovakia_sergej_vojcechovsky"
 	traits = { winter_specialist }
 	skill = 3
-}
-
-if = {
-	limit = {
-		has_dlc = "Death or Dishonor"
-	}
-	add_ideas = {
-		CZE_skoda_works
-		CZE_divided_nation
-}
-	give_guarantee = YUG
-	give_guarantee = ROM
-}
-
-if = {
-	limit = {
-		NOT = { has_dlc = "Death or Dishonor" }
-	}
-	add_ideas = {
-		CZE_fortification_focus
-	}
 }
 

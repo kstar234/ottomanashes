@@ -4,10 +4,10 @@ state={
 	name="STATE_752"
 	manpower = 97719
 	
-	state_category = rural
+	state_category = utterly_sparse
 	
 	history={
-		owner = FRA
+		owner = SPR
 
 		
 		buildings = {

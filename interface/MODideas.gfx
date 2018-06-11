@@ -28,4 +28,121 @@ spriteTypes = {
 		name = "GFX_idea_TUR_power_to_the_sultan_focus"
 		texturefile = "gfx/interface/ideas/TUR_power_to_the_sultan_focus.dds"
 	}
+	spriteType = {
+		name = "GFX_idea_rebuild_holland"
+		texturefile = "gfx/interface/ideas/rebuild_holland.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_generic_socialism_drift_bonus"
+		texturefile = "gfx/interface/ideas/generic_socialism_drift_bonus.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_generic_socialism_outrage"
+		texturefile = "gfx/interface/ideas/generic_socialism_outrage.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_franz_von_papen"
+		texturefile = "gfx/interface/ideas/ministers/germany/franz_von_papen.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_hitler_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/hitler.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_richard_von_kuhlmann_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/richard_von_kuhlmann.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_hjalmar_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/hjalmar.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_dernburg_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/dernburg.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_hohmann_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/hohmann.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_jarres_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/jarres.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_todt_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/todt.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_leonhardt_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/leonhardt.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_keitel_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/keitel.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_neurath_idea"
+		texturefile = "gfx/interface/ideas/ministers/germany/neurath.dds"			
+	}
+	
+	spriteType = {
+		name = "GFX_idea_tommy_douglas_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/tommy_douglas.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_duplessis_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/duplessis.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_st_laurent_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/st_laurent.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_bennett_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/bennett.dds"			
+	}
+	spriteType = {
+		name = "GFX_idea_mackenzie_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/mackenzie.dds"	
+	}
+	spriteType = {
+		name = "GFX_idea_stirling_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/stirling.dds"	
+	}
+	spriteType = {
+		name = "GFX_idea_dunning_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/dunning.dds"	
+	}
+	spriteType = {
+		name = "GFX_idea_ralston_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/ralston.dds"	
+	}
+	spriteType = {
+		name = "GFX_idea_kalman_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/kalman.dds"	
+	}
+	spriteType = {
+		name = "GFX_idea_cormier_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/cormier.dds"	
+	}
+	spriteType = {
+		name = "GFX_idea_wood_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/wood.dds"	
+	}
+	spriteType = {
+		name = "GFX_idea_stephenson_idea"
+		texturefile = "gfx/interface/ideas/ministers/canada/stephenson.dds"	
+	}
+	spriteType = {
+		name = "GFX_idea_USA_flag"
+		texturefile = "gfx/interface/ideas/USA_flag.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_socialism_handled"
+		texturefile = "gfx/interface/ideas/socialism_handled.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_USA_socialism"
+		texturefile = "gfx/interface/ideas/socialism.dds"
+	}
 }

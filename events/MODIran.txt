@@ -1,0 +1,1198 @@
+﻿###########################
+# PER Focus Tree Events
+###########################
+
+add_namespace = persiaft
+
+#country_event = {
+#   id = persiaft.0
+#    title = persiaft.0.t
+#    desc = persiaft.0.d
+#    picture = GFX_USA_flag
+#
+#	is_triggered_only = no
+#
+#    fire_only_once = no
+#
+#    hidden = no
+#
+#    trigger = {
+#    }
+#
+#    mean_time_to_happen = {
+#       days = 1
+#    }
+#
+#    immediate = {
+#    }
+#
+#    option = {
+#       name = persiaft.0.a
+#		ai_chance = {
+#			factor = 25 
+#			modifier = {
+#				factor = 50
+#				has_war = yes
+#				any_enemy_country = {
+#					strength_ratio = { 
+#						tag = ROOT 
+#						ratio < 0.4
+#					}
+#				}
+#			}
+#		}
+#    }
+#}
+
+######################Kurdish Threat Event Chain######################
+#The Kurdish Threat
+country_event = {
+	id = persiaft.0
+	title = persiaft.0.t
+	desc = persiaft.0.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Give them harsh punishments
+		name = persiaft.0.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				has_stability < 0.5
+			}
+		}
+		add_political_power = 150
+		add_stability = 0.05
+		add_war_support = 0.05
+		hidden_effect = {
+			set_country_flag = kurdish_unrest
+			set_country_flag = potential_kurdish_uprising
+			set_country_flag = harsh_punishments
+			complete_national_focus = PER_punishment
+		}
+	}
+	option = { #Give them light sentences
+		name = persiaft.0.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_political_power > 200
+			}
+			modifier = {
+				factor = 2
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 0.5
+				has_political_power < 50
+			}
+			modifier = {
+				factor = 0
+				has_political_power < 0
+			}
+		}
+		add_political_power = -100
+		hidden_effect = {
+			set_country_flag = light_sentences
+			complete_national_focus = PER_light_sentences
+			random_list = {
+				10 = {
+					set_country_flag = kurdish_unrest
+				}
+				90 = {
+					remove_ideas = PER_kurdish_seperatism
+				}
+			}
+		}
+	}
+}
+
+#Kurdish Riots
+country_event = {
+	id = persiaft.1
+	title = persiaft.1.t
+	desc = persiaft.1.d
+	picture = GFX_report_event_generic_riot
+
+	is_triggered_only = no
+
+	fire_only_once = no
+
+	hidden = no
+
+	trigger = {
+		has_country_flag = kurdish_unrest
+		has_idea = PER_kurdish_seperatism
+	}
+
+	immediate = {
+	}
+	
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			factor = 0.75
+			has_country_flag = potential_kurdish_uprising
+		}
+		
+	}
+
+	option = { #Punish the culprits
+		name = persiaft.1.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.2
+					}
+				}
+			}
+		}
+		add_political_power = 50
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = potential_kurdish_uprising
+				}
+				random_list = {
+					35 = {
+						clr_country_flag = potential_kurdish_uprising
+						country_event = { days = 15 id = persiaft.3 }
+					}
+					65 = {
+					}
+				}
+			}
+			set_country_flag = potential_kurdish_uprising
+		}
+	}
+	option = { #Let it slide
+		name = persiaft.1.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 2
+				has_political_power > 50
+			}
+			modifier = {
+				factor = 0.5
+				has_political_power < 25
+			}
+			modifier = {
+				factor = 0
+				has_political_power < 0
+			}
+			modifier = {
+				factor = 0.5
+				has_stability < 0.45
+			}
+			modifier = {
+				factor = 0.5
+				has_stability < 0.35
+			}
+		}
+		add_stability = -0.05
+		add_political_power = -50
+		hidden_effect = {
+			random_list = {
+				25 = {
+					set_country_flag = potential_kurdish_uprising
+				}
+				75 = {
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = potential_kurdish_uprising
+				}
+				random_list = {
+					5 = {
+						clr_country_flag = potential_kurdish_uprising
+						country_event = { days = 15 id = persiaft.3 }
+					}
+					15 = {
+						clr_country_flag = potential_kurdish_uprising
+					}
+					80 = {
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {has_country_flag = potential_kurdish_uprising}
+				}
+				random_list = {
+					25 = {
+						clr_country_flag = kurdish_unrest
+						country_event = { days = 15 id = persiaft.2 }
+					}
+					75 = {
+					}
+				}
+			}
+		}
+	}
+}
+
+#Kurdish Riots End
+country_event = {
+	id = persiaft.2
+	title = persiaft.2.t
+	desc = persiaft.2.d
+	picture = report_event_generic_riot
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Let us rejoice
+		name = persiaft.2.a
+		add_political_power = 25
+		add_stability = 0.05
+		if = {
+			limit = {
+				has_idea = PER_kurdish_seperatism
+			}
+			remove_ideas = PER_kurdish_seperatism
+		}
+	}
+}
+
+#Kurdish Uprising
+country_event = {
+	id = persiaft.3
+	title = persiaft.3.t
+	desc = persiaft.3.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Squash the rebellion!
+		name = persiaft.3.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.2
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio > 0.75
+					}
+				}
+			}
+		}
+		add_political_power = 50
+		add_war_support = 0.05
+		421 = {add_core_of = KUR}
+		421 = {remove_core_of = PER}
+		KUR = { 
+			transfer_state = 421
+		}
+		remove_ideas = PER_kurdish_seperatism
+		declare_war_on = { target = KUR type = annex_everything }
+		hidden_effect = {
+			news_event = { hours = 6 id = irannews.0 }
+			KUR = {
+				load_oob = "KUR_rebellion"
+			}
+		}
+		custom_effect_tooltip = PER_uprising_tooltip
+	}
+	option = { #Work towards a diplomatic solution
+		name = persiaft.3.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 2
+				has_political_power > 50
+			}
+			modifier = {
+				factor = 0.5
+				has_political_power < 25
+			}
+			modifier = {
+				factor = 0
+				has_political_power < 0
+			}
+			modifier = {
+				factor = 0.5
+				has_stability < 0.45
+			}
+			modifier = {
+				factor = 0.5
+				has_stability < 0.35
+			}
+		}
+		add_political_power = -50
+		421 = {add_core_of = KUR}
+		421 = {remove_core_of = PER}
+		KUR = { 
+			transfer_state = 421
+			country_event = { hours = 6 id = persiaft.4 }
+		}
+		remove_ideas = PER_kurdish_seperatism
+		hidden_effect = {
+			news_event = { hours = 6 id = irannews.1 }
+		}
+	}
+	option = { #Let it go
+		name = persiaft.3.c
+		ai_chance = {
+			factor = 0 #AI should never give up, it's just for the player
+		}
+		add_political_power = -100
+		421 = {add_core_of = KUR}
+		421 = {remove_core_of = PER}
+		KUR = { 
+			transfer_state = 421
+		}	
+		remove_ideas = PER_kurdish_seperatism
+		hidden_effect = {
+			news_event = { hours = 6 id = irannews.2 }
+		}
+	}
+}
+
+#Iranians Want to Talk
+country_event = {
+	id = persiaft.4
+	title = persiaft.4.t
+	desc = persiaft.4.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Don't Budge
+		name = persiaft.4.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				PER = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 3
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				PER = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 4
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				PER = {
+					strength_ratio = {
+						tag = ROOT
+						ratio > 5
+					}
+				}
+			}
+		}
+		add_political_power = 50
+		PER = {
+			country_event = { hours = 6 id = persiaft.6 }
+		}
+	}
+	option = { #Agree to the Demands
+		name = persiaft.4.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 1.5
+				has_political_power > 50
+			}
+			modifier = {
+				factor = 0.75
+				has_political_power < 25
+			}
+			modifier = {
+				factor = 0
+				has_political_power < 0
+			}
+		}
+		add_political_power = -50
+		421 = {add_core_of = PER}
+		421 = {remove_core_of = KUR}
+		add_timed_idea = { idea = KUR_iranian_aid_1 days = 365 }
+		PER = { 
+			transfer_state = 421
+			add_timed_idea = { idea = PER_kurdish_aid_1 days = 365 }
+			country_event = { hours = 6 id = persiaft.5 }
+		}
+	}
+}
+
+#Kurdistan Accepts Our Offer
+country_event = {
+	id = persiaft.5
+	title = persiaft.5.t
+	desc = persiaft.5.d
+	picture = GFX_report_event_hitler_handshake
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Now we can continue in peace
+		name = persiaft.5.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = 25
+		hidden_effect = {
+			news_event = { hours = 6 id = irannews.5 }
+		}
+	}
+}
+
+#Kurdistan Refuses Our Offer!
+country_event = {
+	id = persiaft.6
+	title = persiaft.6.t
+	desc = persiaft.6.d
+	picture = GFX_report_event_hungary_refused
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Attack!
+		name = persiaft.6.a
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 2
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.2
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio > 0.75
+					}
+				}
+			}
+		}
+		declare_war_on = { target = KUR type = annex_everything }
+		hidden_effect = {
+			KUR = {
+				load_oob = "KUR_rebellion"
+			}
+			news_event = { hours = 6 id = irannews.4 }
+		}
+		custom_effect_tooltip = PER_uprising_tooltip
+	}
+	option = { #Offer another, better, deal
+		name = persiaft.6.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 2
+				has_political_power > 50
+			}
+			modifier = {
+				factor = 0.5
+				has_political_power < 25
+			}
+			modifier = {
+				factor = 0
+				has_political_power < 0
+			}
+			modifier = {
+				factor = 0.5
+				has_stability < 0.45
+			}
+			modifier = {
+				factor = 0.5
+				has_stability < 0.35
+			}
+		}
+		add_political_power = -50
+		KUR = {
+			country_event = { hours = 6 id = persiaft.7 }
+		}
+	}
+	option = { #Let it go
+		name = persiaft.6.c
+		ai_chance = {
+			factor = 0 #AI should never give up, it's just for the player
+		}
+		add_political_power = -100
+		hidden_effect = {
+			news_event = { hours = 6 id = irannews.3 }
+		}
+	}
+}
+
+#The Iranians Sent Another Offer
+country_event = {
+	id = persiaft.7
+	title = persiaft.7.t
+	desc = persiaft.7.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Refuse
+		name = persiaft.7.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				PER = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 3
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				PER = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 4
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				PER = {
+					strength_ratio = {
+						tag = ROOT
+						ratio > 5
+					}
+				}
+			}
+		}
+		add_political_power = 25
+		PER = {
+			country_event = { hours = 6 id = persiaft.8 }
+		}
+	}
+	option = { #Accept
+		name = persiaft.7.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 2
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 2
+				has_political_power > 50
+			}
+			modifier = {
+				factor = 1
+				has_political_power < 25
+			}
+			modifier = {
+				factor = 0.5
+				has_political_power < 0
+			}
+		}
+		add_political_power = -25
+		421 = {add_core_of = PER}
+		421 = {remove_core_of = KUR}
+		add_timed_idea = { idea = KUR_iranian_aid_2 days = 365 }
+		PER = { 
+			transfer_state = 421
+			add_timed_idea = { idea = PER_kurdish_aid_2 days = 365 }
+			country_event = { hours = 6 id = persiaft.5 }
+		}
+	}
+}
+
+#The Kurds Have Refused Again!
+country_event = {
+	id = persiaft.8
+	title = persiaft.8.t
+	desc = persiaft.8.d
+	picture = GFX_report_event_soviet_finnish_pact
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #This Diplomatic Process Has Yielded us Nothing!
+		name = persiaft.8.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.2
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				KUR = {
+					strength_ratio = {
+						tag = ROOT
+						ratio > 0.75
+					}
+				}
+			}
+		}
+		declare_war_on = { target = KUR type = annex_everything }
+		add_war_support = 0.05
+		hidden_effect = {
+			set_country_flag = dislikes_diplomacy
+			news_event = { hours = 6 id = irannews.4 }
+			KUR = {
+				load_oob = "KUR_rebellion"
+			}
+		}
+		custom_effect_tooltip = PER_uprising_tooltip
+	}
+	option = { #Back Down
+		name = persiaft.8.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 3
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 1.5
+				has_political_power > 50
+			}
+			modifier = {
+				factor = 0.25
+				has_political_power < 25
+			}
+			modifier = {
+				factor = 0
+				has_political_power < 0
+			}
+			modifier = {
+				factor = 0.5
+				has_stability < 0.45
+			}
+			modifier = {
+				factor = 0.5
+				has_stability < 0.35
+			}
+		}
+		add_political_power = -150
+		add_stability = -0.05
+		hidden_effect = {
+			news_event = { hours = 6 id = irannews.3 }
+		}
+	}
+}
+
+###################Azerbaijani Threat Event Chain######################
+#The Azerbaijani Threat
+country_event = {
+	id = persiaft.9
+	title = persiaft.9.t
+	desc = persiaft.9.d
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Send in the Police
+		name = persiaft.9.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2
+				has_stability < 0.5
+			}
+			modifier = {
+				factor = 2
+				has_stability < 0.30
+			}
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		remove_ideas = PER_azerbaijani_protests
+		hidden_effect = {
+			set_country_flag = police_azerbaijan
+			country_event = { days = 21 id = persiaft.10 }
+		}
+	}
+	option = { #Establish a permanant military presence
+		name = persiaft.9.b
+		ai_chance = {
+			factor = 15
+			modifier = {
+				factor = 5
+				has_political_power > 200
+			}
+			modifier = {
+				factor = 2
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 0.5
+				has_political_power < 50
+			}
+			modifier = {
+				factor = 0
+				has_political_power < 0
+			}
+			modifier = {
+				factor = 0.5
+				has_war_support < 0.15
+			}
+		}
+		add_political_power = -50
+		add_manpower = -3000
+		remove_ideas = PER_azerbaijani_protests
+		hidden_effect = {
+			set_country_flag = military_azerbaijan
+			country_event = { days = 30 id = persiaft.10 }
+		}
+	}
+	option = { #Establish an extensive military presence
+		name = persiaft.9.c
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 5
+				has_political_power > 200
+			}
+			modifier = {
+				factor = 2
+				has_political_power > 100
+			}
+			modifier = {
+				factor = 0.5
+				has_political_power < 50
+			}
+			modifier = {
+				factor = 0
+				has_political_power < 0
+			}
+			modifier = {
+				factor = 0.5
+				has_war_support < 0.20
+			}
+		}
+		trigger = {
+			NOT = {
+				has_war_support < 0.05
+			}
+		}
+		add_political_power = -100
+		add_war_support = -0.05
+		add_manpower = -6000
+		remove_ideas = PER_azerbaijani_protests
+		hidden_effect = {
+			set_country_flag = extensive_military_azerbaijan
+			country_event = { days = 40 id = persiaft.10 }
+		}
+	}
+}
+
+#Breakup of the Caucusus
+country_event = {
+	id = persiaft.10
+	title = persiaft.10.t
+	desc = persiaft.10.d
+	picture = GFX_report_event_german_reichstag_bombed
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #If only we could take advantage of this...
+		name = persiaft.10.a
+		ai_chance = {
+			factor = 1
+		}
+		trigger = {
+			NOT = {
+				OR = {
+					has_country_flag = military_azerbaijan
+					has_country_flag = extensive_military_azerbaijan
+				}
+			}
+		}
+	}
+	option = { #Use this opportunity
+		name = persiaft.10.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				has_country_flag = extensive_military_azerbaijan
+			}
+		}
+		trigger = {
+			OR = {
+				has_country_flag = military_azerbaijan
+				has_country_flag = extensive_military_azerbaijan
+			}
+		}
+		add_political_power = 25
+		add_manpower = -100
+		transfer_state = 828
+	}
+	option = { #Abuse this opportunity
+		name = persiaft.10.c
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			has_country_flag = extensive_military_azerbaijan
+		}
+		add_political_power = 50
+		add_manpower = -500
+		transfer_state = 828
+		transfer_state = 229
+	}
+	option = { #Let this pass
+		name = persiaft.10.e
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			OR = {
+				has_country_flag = military_azerbaijan
+				has_country_flag = extensive_military_azerbaijan
+			}
+		}
+	}
+}
+
+#Iranians want help
+country_event = {
+	id = persiaft.11
+	title = persiaft.11.t
+	desc = persiaft.11.d
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Give them support
+		name = persiaft.11.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -25
+		PER = {
+			country_event = { days = 7 id = persiaft.12 }
+		}
+	}
+	option = { #Send them some vocal support
+		name = persiaft.11.b
+		ai_chance = {
+			factor = 1
+		}
+		PER = {
+			country_event = { days = 7 id = persiaft.13 }
+		}
+	}
+}
+
+#British gave support
+country_event = {
+	id = persiaft.12
+	title = persiaft.12.t
+	desc = persiaft.12.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #We thank our British friends
+		name = persiaft.12.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = 25
+		add_stability = 0.10
+	}
+}
+
+#British refused support
+country_event = {
+	id = persiaft.13
+	title = persiaft.13.t
+	desc = persiaft.13.d
+	picture = GFX_report_event_chamberlain
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Oh well...
+		name = persiaft.13.a
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+
+#Fascist Coup d'etat!
+country_event = {
+	id = persiaft.14
+	title = persiaft.14.t
+	desc = persiaft.14.d
+	picture = GFX_report_event_canadian_tank
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+	}
+
+	immediate = {
+	}
+
+	option = { #Onwards! To victory!
+		name = persiaft.14.a
+		ai_chance = {
+			factor = 1
+		}
+		hidden_effect = {
+			set_capital = 412
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = neutrality
+				size = 0.5
+				capital = 266
+				states = { 266 413 417 419 420 421 }
+			}
+			set_party_name = { ideology = neutrality long_name = PER_fascism_party_civil_war name = PER_fascism_party_civil_war }
+			#load_oob = "PER_fascism_civil_war"
+			random_other_country = {
+				limit = {
+					original_tag = GER
+					has_government = neutrality
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+				#load_oob = "PER_neutrality_fascism_civil_war"
+			}
+			hidden_effect = { news_event = { id = wtt_news.1 hours = 6 } }
+			
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.75
+			}	
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
+			set_stability = 0.7
+			set_war_support = 0.35
+		}
+		custom_effect_tooltip = PER_fascism_civil_war_tooltip
+		hidden_effect = { set_cosmetic_tag = PER_provisional_gvt }
+		random_other_country = {
+			limit = {
+				original_tag = GER
+				has_government = neutrality
+			}
+			set_cosmetic_tag = PER_civil_war
+		}
+		create_country_leader = {
+			name = "Hasan Arfa"
+			desc = "POLITICS_HASAN_ARFA_DESC"
+			picture = GFX_portrait_ger_august_von_mackensen
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+		}
+	}
+}

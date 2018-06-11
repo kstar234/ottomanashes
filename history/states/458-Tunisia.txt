@@ -3,13 +3,13 @@ state={
 	id=458
 	name="STATE_458"
 	manpower = 1982940
-	state_category = town
+	state_category = slightly_dense
 	resources={
 		steel=8
 	}
 
 	history={
-		owner = FRA
+		owner = CAR
 		victory_points = {
 			11969 10 
 		}

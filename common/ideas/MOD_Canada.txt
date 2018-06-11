@@ -1,0 +1,212 @@
+ideas = {
+	country = {
+		canadian_isolationism = {
+
+			picture = neutrality_idea
+		
+			allowed = {
+				original_tag = CAN
+				has_war = no
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				ai_join_ally_desire_factor = -50
+				war_support_factor = -0.05
+				join_faction_tension = 0.20
+				lend_lease_tension = 0.50
+				send_volunteers_tension = 0.50
+				guarantee_tension = 0.75
+			}
+		}
+	}
+	
+	##############################################
+	#################MINISTERS####################
+	##############################################
+	
+	head_of_government = {
+		tommy_douglas_hog = { #socialist
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				christian_socialist
+			}
+			cancel_if_invalid = no
+			
+			picture = tommy_douglas_idea
+
+			cost = 150
+		}
+		
+		maurice_duplessis_hog = { #french canadian
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				french_canadian
+			}
+			cancel_if_invalid = no
+			
+			picture = duplessis_idea
+
+			cost = 150
+		}
+	}
+	
+	foreign_minister = {
+		louis_st_laurent_fm = { #french canadian
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				ambassador
+			}
+			cancel_if_invalid = no
+			
+			picture = st_laurent_idea
+
+			cost = 150
+		}
+		
+		richard_bennett_fm = { 
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				lawyer
+			}
+			cancel_if_invalid = no
+			
+			picture = bennett_idea
+
+			cost = 150
+		}
+	}
+	
+	minister_national_defense = {
+		ian_mackenzie_mnd = {
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				scandalous
+			}
+			cancel_if_invalid = no
+			
+			picture = mackenzie_idea
+
+			cost = 150
+		}
+		
+		grote_stirling_mnd = {
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				conservative
+			}
+			cancel_if_invalid = no
+			
+			picture = stirling_idea
+
+			cost = 150
+		}
+	}
+	
+	economy_minister = {
+		charles_dunning_em = {
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				businessman
+			}
+			cancel_if_invalid = no
+			
+			picture = dunning_idea
+
+			cost = 150
+		}
+		
+		james_ralston_em = {
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				lawyer
+			}
+			cancel_if_invalid = no
+			
+			picture = ralston_idea
+
+			cost = 150
+		}
+	}
+	
+	construction_minister = {
+		maxwell_kalman_cm = {
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				civilian_architect
+			}
+			cancel_if_invalid = no
+			
+			picture = kalman_idea
+
+			cost = 150
+		}
+		
+		ernest_cormier_cm = { #french canadian
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				french_architect
+			}
+			cancel_if_invalid = no
+			
+			picture = cormier_idea
+
+			cost = 150
+		}
+	}
+	
+	intel_minister = {
+		stuart_wood_im = {
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				rcmp_commander
+			}
+			cancel_if_invalid = no
+			
+			picture = wood_idea
+
+			cost = 150
+		}
+		
+		william_stephenson_im = {
+			allowed = {original_tag = CAN}
+			available = {
+			}
+			traits = {
+				business_spy
+			}
+			cancel_if_invalid = no
+			
+			picture = stephenson_idea
+
+			cost = 150
+		}
+	}
+}

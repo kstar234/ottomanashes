@@ -1,0 +1,372 @@
+﻿###########################
+# USA Events
+###########################
+
+add_namespace = modusa
+
+#country_event = {
+#   id = modusa.0
+#    title = modusa.0.t
+#    desc = modusa.0.d
+#    picture = GFX_USA_flag
+#
+#	is_triggered_only = no
+#
+#    fire_only_once = no
+#
+#    hidden = no
+#
+#    trigger = {
+#    }
+#
+#    mean_time_to_happen = {
+#       days = 1
+#    }
+#
+#    immediate = {
+#    }
+#
+#    option = {
+#       name = modusa.0.a
+#		ai_chance = {
+#			factor = 25 
+#			modifier = {
+#				factor = 50
+#				has_war = yes
+#				any_enemy_country = {
+#					strength_ratio = { 
+#						tag = ROOT 
+#						ratio < 0.4
+#					}
+#				}
+#			}
+#		}
+#    }
+#}
+
+######################Civil War Event Chain######################
+#Riots in Chicago
+country_event = {
+	id = modusa.0
+	title = modusa.0.t
+	desc = modusa.0.d
+	picture = GFX_report_event_worker_protests
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	fire_only_once = yes
+
+	hidden = no
+
+	trigger = {
+		date > 1936.12.1
+		date < 1937.6.1
+		has_idea = socialist_tensions
+		NOT = { has_country_leader = { ruling_only = yes name = "Huey Pierce Long Jr." } }
+	}
+
+	immediate = {
+	}
+
+	option = { #Send in the National Guard!
+		name = modusa.0.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -50
+		add_stability = -0.05
+		395 = { 
+			damage_building = { type = industrial_complex damage = 5 } 
+			damage_building = { type = infrastructure damage = 3 } 
+		}
+		hidden_effect = {
+			country_event = { days = 2 id = modusa.1 }
+		}
+	}
+}
+
+#Chicago Massacre
+country_event = {
+	id = modusa.1
+	title = modusa.1.t
+	desc = modusa.1.d
+	picture = GFX_report_event_dead_soldiers
+
+	is_triggered_only = yes
+
+	fire_only_once = no
+
+	hidden = no
+
+	immediate = {
+	}
+
+	option = { #We've made a fatal error...
+		name = modusa.1.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -100
+		add_stability = -0.15
+		add_popularity = { ideology = democratic popularity = -0.10 }
+		395 = { 
+			damage_building = { type = industrial_complex damage = 2 } 
+			damage_building = { type = infrastructure damage = 1 } 
+		}
+		swap_ideas = {
+			remove_idea = socialist_tensions
+			add_idea = socialist_conflict
+		}
+		hidden_effect = {
+			set_country_flag = chicago_massacre
+			country_event = { days = 30 id = modusa.2 }
+		}
+	}
+}
+
+#Widespread Protests in the North
+country_event = {
+	id = modusa.2
+	title = modusa.2.t
+	desc = modusa.2.d
+	picture = GFX_report_event_generic_riot
+
+	is_triggered_only = yes
+
+	fire_only_once = no
+
+	hidden = no
+
+	immediate = {
+	}
+
+	option = { #It's getting worse.
+		name = modusa.2.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -25
+		add_stability = -0.05
+		391 = { 
+			damage_building = { type = industrial_complex damage = 2 } 
+			damage_building = { type = infrastructure damage = 1 } 
+		}
+		394 = { 
+			damage_building = { type = industrial_complex damage = 3 } 
+			damage_building = { type = infrastructure damage = 1 } 
+		}
+		393 = { 
+			damage_building = { type = industrial_complex damage = 6 } 
+			damage_building = { type = infrastructure damage = 2 } 
+		}
+		396 = { 
+			damage_building = { type = industrial_complex damage = 3 } 
+			damage_building = { type = infrastructure damage = 1 } 
+		}
+		261 = { 
+			damage_building = { type = industrial_complex damage = 5 } 
+			damage_building = { type = infrastructure damage = 3 } 
+		}
+		360 = { 
+			damage_building = { type = industrial_complex damage = 4 } 
+			damage_building = { type = infrastructure damage = 2 } 
+		}
+		359 = { 
+			damage_building = { type = industrial_complex damage = 3 } 
+			damage_building = { type = infrastructure damage = 1 } 
+		}
+		358 = { 
+			damage_building = { type = industrial_complex damage = 8 } 
+			damage_building = { type = infrastructure damage = 5 } 
+		}
+		357 = { 
+			damage_building = { type = industrial_complex damage = 4 } 
+			damage_building = { type = infrastructure damage = 3 } 
+		}
+		361 = { 
+			damage_building = { type = industrial_complex damage = 1 } 
+		}
+	}
+}
+
+###################### Election Event Chain ######################
+#Elections are to go ahead
+country_event = {
+	id = modusa.100
+	title = modusa.100.t
+	desc = modusa.100.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	hidden = no
+
+	immediate = {
+	}
+
+	option = {
+		name = modusa.100.a
+		set_country_flag = election
+	}
+}
+
+#Republican Primary
+country_event = {
+	id = modusa.101
+	title = modusa.101.t
+	desc = modusa.101.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	hidden = no
+
+	immediate = {
+	}
+
+	option = {
+		name = modusa.101.a
+		complete_national_focus = USA_republican_primary
+		set_country_flag = james_wadsworth_primary_1936
+	}
+	option = {
+		name = modusa.101.b
+		add_political_power = 50
+		complete_national_focus = USA_republican_primary
+		set_country_flag = thomas_dewey_primary_1936
+	}
+}
+
+#Democratic Primary
+country_event = {
+	id = modusa.102
+	title = modusa.102.t
+	desc = modusa.102.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	hidden = no
+
+	immediate = {
+	}
+
+	option = {
+		name = modusa.102.a
+		complete_national_focus = USA_democratic_primary
+		set_country_flag = franklin_roosevelt_primary_1936
+	}
+	option = {
+		name = modusa.102.b
+		add_political_power = 50
+		complete_national_focus = USA_democratic_primary
+		set_country_flag = huey_long_primary_1936
+	}
+}
+
+#1936 Election
+country_event = {
+	id = modusa.103
+	title = modusa.103.t
+	desc = modusa.103.d
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	hidden = no
+	
+	trigger = {
+		tag = USA
+		has_country_flag = election
+		date < 1937.1.1
+	}
+
+	immediate = {
+	}
+
+	option = {
+		name = modusa.103.a
+		trigger = {
+			has_country_flag = james_wadsworth_primary_1936
+		}
+		set_country_flag = james_wadsworth_1936
+		create_country_leader = {
+			name = "James Wolcott Wadsworth Jr."
+			desc = "POLITICS_JAMES_WADSWORTH_HOOVER_DESC"
+			picture = "Portrait_USA_James_Wadsworth.tga"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				dislikes_germany
+			}
+		}
+		complete_national_focus = USA_james_wadsworth_1936
+	}
+	option = {
+		name = modusa.103.b
+		trigger = {
+			has_country_flag = thomas_dewey_primary_1936
+		}
+		set_country_flag = thomas_dewey_1936
+		create_country_leader = {
+			name = "Thomas Edmund Dewey"
+			desc = "POLITICS_THOMAS_DEWEY_DESC"
+			picture = "Portrait_USA_Thomas_Dewey.tga"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				
+			}
+		}
+		add_stability = 0.05
+		complete_national_focus = USA_thomas_dewey_1936
+	}
+	option = {
+		name = modusa.103.c
+		trigger = {
+			has_country_flag = franklin_roosevelt_primary_1936
+		}
+		set_country_flag = franklin_roosevelt_1936
+		create_country_leader = {
+			name = "Franklin Delano Roosevelt"
+			desc = "POLITICS_FRANKLIN_DELANO_ROOSEVELT_DESC"
+			picture = "Portrait_USA_Franklin_Roosevelt.tga"
+			expire = "1947.1.1"
+			ideology = liberalism
+			traits = {
+				dislikes_germany
+			}
+		}
+		add_stability = 0.10
+		complete_national_focus = USA_franklin_roosevelt_1936
+	}
+	option = {
+		name = modusa.103.e
+		trigger = {
+			has_country_flag = huey_long_primary_1936
+		}
+		set_country_flag = huey_long_1936
+		create_country_leader = {
+			name = "Huey Pierce Long Jr."
+			desc = "POLITICS_HUEY_LONG_DESC"
+			picture = "Portrait_USA_God.tga"
+			expire = "1965.1.1"
+			ideology = liberalism
+			traits = {
+				
+			}
+		}
+		add_stability = 0.15
+		complete_national_focus = USA_huey_long_1936
+	}
+}

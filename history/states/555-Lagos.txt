@@ -1,0 +1,25 @@
+
+state={
+	id=555
+	name="STATE_555" #Kuril Islands
+	manpower = 15000 
+	
+	state_category = utterly_sparse
+
+	history={
+		owner = JAP
+		buildings = {
+			infrastructure = 3
+			1399 = {
+				naval_base = 3
+
+			}
+
+		}
+
+	}
+
+	provinces={
+		1399 1515 13037 
+	}
+}

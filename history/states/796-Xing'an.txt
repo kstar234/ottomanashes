@@ -1,0 +1,19 @@
+state={
+	id=796
+	name="STATE_796"
+	provinces={
+		1502 4876 7894 
+	}
+	history={
+		owner = MEN
+		add_core_of = MEN
+		buildings = {
+			infrastructure = 4
+
+		}
+
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category = extremely_sparse
+}

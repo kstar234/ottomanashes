@@ -1,0 +1,613 @@
+focus_tree = {
+	id = bordeaux_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = BOR
+		}
+	}
+
+	default = no
+	
+	####Go to war
+	focus = {
+		id = BOR_attack_them
+		icon = unknown
+		x = 4
+		y = 0
+		cost = 2.9
+		
+		available = {
+			has_country_flag = BOR_attack_yes
+		}
+		
+		will_lead_to_war_with = FRA
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = war_on_france_tt
+			hidden_effect = {
+				declare_war_on = { target = FRA type = annex_everything }
+				news_event = { days = 1 id = news.501}
+			}
+		}
+	}
+	
+	focus = {
+		id = BOR_fortify_capital
+		icon = unknown
+		x = 1
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = BOR_attack_them
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		
+		completion_reward = {
+			25 = { add_building_construction = { type = bunker province = 9717 level = 1 instant_build = yes } }
+			19 = { add_building_construction = { type = bunker province = 9737 level = 1 instant_build = yes } }
+		}
+	}
+	
+	focus = {
+		id = BOR_national_guard
+		icon = unknown
+		x = 1
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = BOR_fortify_capital
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = BOR_guards
+		}
+	}
+	
+	focus = {
+		id = BOR_sniper_platoon
+		icon = unknown
+		x = 1
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = BOR_national_guard
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = BOR_snipers
+		}
+	}
+	
+	focus = {
+		id = BOR_smart_army
+		icon = unknown
+		x = 2
+		y = 4
+		cost = 10
+		
+		prerequisite = {
+			focus = BOR_sniper_platoon
+		}
+		
+		cancel_if_invalid = no
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			swap_ideas = { remove_idea = BOR_very_incompetent_staff add_idea = BOR_slightly_incompetent_staff }
+		}
+	}
+	
+	focus = {
+		id = BOR_naval_rearmament
+		icon = unknown
+		x = 3
+		y = 1
+		cost = 1.5
+		
+		prerequisite = {
+			focus = BOR_attack_them
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_rebuild
+		icon = unknown
+		x = 3
+		y = 2
+		cost = 10
+		
+		prerequisite = {
+			focus = BOR_naval_rearmament
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_faster_repairs
+		icon = unknown
+		x = 4
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = BOR_rebuild
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	
+	
+	focus = {
+		id = BOR_desperate_airforce
+		icon = unknown
+		x = 5
+		y = 1
+		cost = 1.5
+		
+		prerequisite = {
+			focus = BOR_attack_them
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = BOR_desperate_airforce_tt
+		}
+	}
+	
+	focus = {
+		id = BOR_ask_england
+		icon = unknown
+		x = 5
+		y = 2
+		cost = 5
+		
+		mutually_exclusive = {
+			focus = BOR_ask_usa
+		}
+		
+		prerequisite = {
+			focus = BOR_desperate_airforce
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_ask_usa
+		icon = unknown
+		x = 7
+		y = 2
+		cost = 5
+		
+		mutually_exclusive = {
+			focus = BOR_ask_england
+		}
+		
+		prerequisite = {
+			focus = BOR_desperate_airforce
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_plane_integration
+		icon = unknown
+		x = 6
+		y = 3
+		cost = 10
+		
+		prerequisite = {
+			focus = BOR_ask_england
+			focus = BOR_ask_usa
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_total_war
+		icon = unknown
+		x = 5
+		y = 5
+		cost = 10
+		
+		prerequisite = {
+			focus = BOR_smart_army
+		}
+		prerequisite = {
+			focus = BOR_plane_integration
+		}
+		prerequisite = {
+			focus = BOR_faster_repairs
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	
+	
+	####Not going to war
+	focus = {
+		id = BOR_peace_talks
+		icon = unknown
+		x = 11
+		y = 0
+		cost = 2.9
+		
+		available = {
+			has_country_flag = BOR_attack_no
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = BOR_peace_talks_tt
+		}
+	}
+	
+	focus = {
+		id = BOR_send_envoy
+		icon = unknown
+		x = 11
+		y = 1
+		cost = 0.8
+		
+		prerequisite = {
+			focus = BOR_peace_talks
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_compromises
+		icon = unknown
+		x = 10
+		y = 2
+		cost = 5.8
+		
+		prerequisite = {
+			focus = BOR_send_envoy
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_improve_relations
+		icon = unknown
+		x = 9
+		y = 3
+		cost = 3
+		
+		prerequisite = {
+			focus = BOR_compromises
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_two_state_solution
+		icon = unknown
+		x = 11
+		y = 3
+		cost = 8
+		
+		prerequisite = {
+			focus = BOR_compromises
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_start_plans
+		icon = unknown
+		x = 10
+		y = 4
+		cost = 10
+		
+		prerequisite = {
+			focus = BOR_two_state_solution
+		}
+		prerequisite = {
+			focus = BOR_improve_relations
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	
+	focus = {
+		id = BOR_promises_of_peace
+		icon = unknown
+		x = 12
+		y = 2
+		cost = 5.8
+		
+		prerequisite = {
+			focus = BOR_send_envoy
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_referendum
+		icon = unknown
+		x = 12
+		y = 5
+		cost = 10
+		
+		prerequisite = {
+			focus = BOR_promises_of_peace
+		}
+		prerequisite = {
+			focus = BOR_start_plans
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_start_integration
+		icon = unknown
+		x = 12
+		y = 6
+		cost = 21.5
+		
+		prerequisite = {
+			focus = BOR_referendum
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_complete_negotiations
+		icon = unknown
+		x = 12
+		y = 7
+		cost = 10
+		
+		prerequisite = {
+			focus = BOR_start_integration
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = BOR_one_state
+		icon = unknown
+		x = 11
+		y = 8
+		cost = 10
+		
+		prerequisite = {
+			focus = BOR_complete_negotiations
+		}
+		
+		mutually_exclusive = {
+			focus = BOR_two_state
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = BOR_one_state_tt
+		}
+	}
+	
+	focus = {
+		id = BOR_two_state
+		icon = unknown
+		x = 13
+		y = 8
+		cost = 10
+		
+		prerequisite = {
+			focus = BOR_complete_negotiations
+		}
+		
+		mutually_exclusive = {
+			focus = BOR_one_state
+		}
+		
+		available = {
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = BOR_two_state_tt
+		}
+	}
+	
+}

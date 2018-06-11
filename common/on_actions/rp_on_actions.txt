@@ -1,0 +1,19 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				
+			set_variable = { reform_points = 10 }
+			set_variable = { reform_points_rate = 200 }
+			set_variable = { reform_points_max = 500 }
+			}
+		}
+	}
+	
+	on_daily = {
+		effect = {
+			add_to_variable = { reform_points = reform_points_rate }
+			clamp_variable = { var = reform_points min = 0 max = reform_points_max }
+		}
+	}
+}

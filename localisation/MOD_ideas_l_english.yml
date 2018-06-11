@@ -1,49 +1,50 @@
 ﻿l_english:
- #Lebanon
- LEB_Raise_an_army_focus:0 "Army raised"
- LEB_dismantle_existing_militias_focus:0 "Militias dismantled"
- fouad_shehab:0 "Fouad Shehab"
- LEB_integrate_them_focus:0 "Militias integrated"
- LEB_destroy_the_militias_focus:0 "Militias destroyed"
- LEB_army_of_terror_focus:0 "Army of terror"
- LEB_policy_of_terrorism_focus:0 "Policy of terrorism"
- LEB_employing_researchers_focus:0 "Employing researchers"
- LEB_start_secret_research_focus:0 "Secret research"
- LEB_improve_the_factories_focus:0 "Factories improved"
- LEB_train_the_workers_focus:0 "Workers trained"
- LEB_found_the_phalange_focus:0 "The Phalange"
- LEB_encourage_communism_focus:0 "Communism Encouraged"
- LEB_emile_edde_focus:0 "Émile Eddé"
- LEB_make_speeches_focus:0 "Phoenician speeches"
- LEB_phoenician_army_focus:0 "Phoenician Army"
+ 
+ ministers:0 "Ministers"
+ 
+ head_of_government:0 "Second in Power"
+ foreign_minister:0 "Foreign Minister"
+ minister_national_defense:0 "Minister of National Defense"
+ construction_minister:0 "Construction Minister"
+ intel_minister:0 "Intelligence Minister"
+ economy_minister:0 "Economy Minister"
+ 
+ idea_category_army_chief:0 "Chief of Army"
+ idea_category_head_of_government:0 "Second in Power"
+ idea_category_foreign_minister:0 "Foreign Minister"
+ idea_category_minister_national_defense:0 "Minister of National Defense"
+ idea_category_construction_minister:0 "Construction Minister"
+ idea_category_intel_minister:0 "Intelligence Minister"
+ idea_category_economy_minister:0 "Economy Minister"
 
- #Turkey
- ottoman_ashes:0 "Ottoman Ashes"
- TUR_lost_ww1:0 "Lost WW1"
- TUR_no_airforce:0 "Very Small Airforce"
- TUR_justification_focus:0 "Justification"
- TUR_civilian_training_focus:0 "Civilian Training"
- TUR_institute_of_research_focus:0 "Institute of Research"
- TUR_faster_production_focus:0 "Faster Production"
- TUR_return_of_the_empire_focus:0 "Return of the Empire"
- TUR_keep_the_assembly_focus:0 "Keep the Assembly"
- TUR_political_figure_focus:0 "Political Figure"
- TUR_northern_volunteers_focus:0 "Northern Volunteers"
- TUR_abolish_the_assembly_focus:0 "Abolish the Assembly"
- TUR_power_to_the_sultan_focus:0 "Power to the Sultan"
- TUR_conscription_focus:0 "Conscription"
- TUR_ottoman_army_focus:0 "Ottoman Army"
- TUR_training_women_focus:0 "Training Women"
- TUR_nation_assembly_of_turkey_focus:0 "Nation Assembly of Turkey"
- TUR_communist_opportunity_focus:0 "Communist Opportunity"
- TUR_joint_army_focus:0 "Joint Army"
- TUR_western_expansion_focus:0 "Western Expansion"
- TUR_stay_neutral_focus:0 "Stay Neutral"
- TUR_democratic_values_focus:0 "Democratic Values"
- TUR_language_association_focus:0 "Language Association"
- TUR_turkish_literature_focus:0 "Turkish Literature"
- TUR_education_association_focus:0 "Education Association"
- TUR_improved_schools_focus:0 "Improved Schools" 
- TUR_communist_volunteers_focus:0 "Communist Volunteers"
- TUR_moderate_socialism_focus:0 "Moderate Socialism"
- TUR_on_our_own_focus:0 "On our Own"
+ #France
+ FRA_Civil_War:0 "French Civil War"
+ FRA_Civil_War_desc:0 "The french civil war has been raging on for quite a while, and we have to be at our best to be able to win this war."
+ 
+ #Bordeaux
+ BOR_Civil_War:0 "French Civil War"
+ BOR_Civil_War_desc:0 "The french civil war has been raging on for quite a while, and we have to be at our best to be able to win this war."
+ BOR_very_incompetent_staff:0 "Very Incompetent Staff"
+ BOR_very_incompetent_staff_desc:0 "The french generals that joined our cause are mostly very inexperienced and incompetent. They have been planning too many unsuccessful strategies in this war..."
+ BOR_slightly_incompetent_staff:0 "Slightly Incompetent Staff"
+ BOR_slightly_incompetent_staff_desc:0 "After completing a nation wide staff training program led by the Americans, our staff is now slightly less incompetent"
+ BOR_unorganized_airforce:0 "Unorganized Airforce"
+ BOR_unorganized_airforce_desc:0 "A story from one pilot describes it all: 'Throughout the war, the Nasis had maintained regular air domination and had put in place smart strategies to counter our fighters. They rammed their sturdier planes into ours, and ripped our weaker and lower quality planes using their german equipped planes. We have no more motivation to fight in the skies, we cannot fight any longer. My fellow pilots are just so disoriented and unoriganized, we cannot counter their planes at this time and moment.'"
+ 
+ 
+ #Germany
+ army_with_a_state:0 "Army With a State"
+ army_with_a_state_desc:0 "Germany has always been militaristic from its founding in 1870. It's predecessor, Prussia, was named an 'Army with a State.' After the 1848 Revolution shook Germany, there was no question that the military held unresonable power within Germany. This has many positive effects, as the Army is more efficiently led, and can punch far above its weight. However, the toll on the economy could not be understated. Also, if a Kaiser wishes to go against the military, he or she may face a coup'd etat."
+ german_nationalism:0 "German Nationalism"
+ german_nationalism_desc:0 "German Nationalism was what united the Prussians and the rest of Germany into one country. Its influence is still strong, evident in many places around Germany. The Army may have a state, but the Germans make up that army."
+ memories_holland:0 "Memories from Holland"
+ memories_holland_desc:0 "A story from one soldier describes it all: 'The Dutch flooded their polders, and halted us. We battled for a good month, constant barrage everyday. It was almost like World War One, but at least the conditions were better. After two years, I heard there were peace negotiations. I can only say this: I don't want to fight anymore.'"
+ 
+ #Holland
+ recovery:0 "Recovery from the German War"
+ recovery_desc:0 "To save the homeland, we had to build many forts and flood most of our fields, and because of that, we are now spending a lot of money to rebuild our country from the times of war."
+ 
+ 
+ #Transcaucasia
+ disintegrating_country:0 "Disintegrating Country"
+ disintegrating_country_desc:0 "Our country is disintegrating before our very eyes. There is little we can do to stop it. We can only try to delay it for as long as possible."

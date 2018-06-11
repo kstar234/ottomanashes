@@ -1,0 +1,223 @@
+ideas = {
+	country = {
+		PER_kurdish_aid_1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = ger_mefo_bills_payment
+			
+			modifier = {
+				consumer_goods_factor = 0.02
+			}
+		}
+		PER_kurdish_aid_2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = ger_mefo_bills_payment
+			
+			modifier = {
+				consumer_goods_factor = 0.04
+			}
+		}
+		KUR_iranian_aid_1 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = ger_mefo_bills
+			
+			modifier = {
+				consumer_goods_factor = -0.10
+				industrial_capacity_factory = 0.5
+			}
+		}
+		KUR_iranian_aid_2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = ger_mefo_bills
+			
+			modifier = {
+				consumer_goods_factor = -0.20
+				industrial_capacity_factory = 1
+			}
+		}
+		PER_iraqi_unrest = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = FRA_matignon_agreements
+			
+			modifier = {
+				drift_defence_factor = -0.05
+				stability_factor = -0.05
+				political_power_factor = -0.05
+			}
+		}
+		PER_kurdish_seperatism = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = FRA_scw_intervention_republicans_focus
+			
+			modifier = {
+				drift_defence_factor = -0.10
+				stability_factor = -0.05
+				conscription_factor = -0.05
+			}
+		}
+		PER_azerbaijani_protests = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_volunteer_expedition_bonus
+			
+			modifier = {
+				drift_defence_factor = -0.10
+				production_speed_buildings_factor = -0.20
+				conscription_factor = -0.10
+			}
+		}
+		PER_tradition_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = neutrality_idea
+			
+			modifier = {
+				drift_defence_factor = 0.15
+				neutrality_drift = 0.02
+				fascism_drift = -0.01
+				communism_drift = -0.01
+				democratic_drift = -0.01
+			}
+		}
+		PER_strengthen_the_shah_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = ast_abandon_the_westminster_system
+			
+			modifier = {
+				drift_defence_factor = 0.15
+				political_power_gain = 0.25
+				neutrality_drift = 0.05
+				fascism_drift = -0.02
+				communism_drift = -0.02
+				democratic_drift = -0.02
+			}
+		}
+		PER_iranian_nationalism_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_morale_bonus
+			
+			modifier = {
+				war_support_factor = 0.05
+				army_morale_factor = 0.10
+			}
+		}
+		PER_royal_military_idea = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_war_preparation
+			
+			modifier = {
+				army_attack_factor = 0.10
+				army_defence_factor = 0.10
+				special_forces_attack_factor = 0.15
+				special_forces_defence_factor = 0.15
+			}
+		}
+	}
+}

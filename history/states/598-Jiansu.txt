@@ -3,12 +3,10 @@ state={
 	id=598
 	name="STATE_598"
 	
-	state_category = town
+	state_category = overcrowded
 
 	history={
 		owner = ANH
-		add_core_of = CHI
-		add_core_of = PRC
 		add_core_of = ANH
 		buildings = {
 			infrastructure = 3

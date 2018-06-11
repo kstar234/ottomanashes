@@ -3,10 +3,10 @@ state={
 	name="STATE_97"
 	manpower = 1508900
 	
-	state_category = rural
+	state_category = slightly_sparse
 	
 	history={
-		owner = POL
+		owner = BLR
 		victory_points = {
 			3393 1 
 		}

@@ -1,0 +1,22 @@
+
+state={
+	id=585
+	name="STATE_585"
+
+	history={
+		owner = UZB
+		buildings = {
+			infrastructure = 3
+
+		}
+		add_core_of = UZB
+
+	}
+
+	provinces={
+		1532 1554 1576 1623 4488 4499 4578 4581 4618 4629 4636 4638 7486 7501 7507 7682 7775 7777 10353 10366 10420 10470 12161 12465 12471 
+	}
+	manpower=633721
+	buildings_max_level_factor=1.000
+	state_category=highly_sparse
+}

@@ -1,0 +1,824 @@
+focus_tree = {
+	id = Iran
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = PER
+		}
+	}
+
+	##########Politics##########
+	
+	###Authoritarianism/Fascism###
+
+	focus = {
+		id = PER_subdue_iraqis
+		icon = GFX_goal_generic_political_pressure
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+			focus = PER_minority_rights
+		}			
+		
+		x = 8
+		y = 0
+		
+		cost = 2.9
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+			remove_ideas = PER_iraqi_unrest
+		}
+	}
+	
+	focus = {
+		id = PER_discuss_authority
+		icon = GFX_focus_generic_govt
+		prerequisite = { focus = PER_subdue_iraqis}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 5
+		y = 2
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 120
+			add_war_support = 0.05
+		}
+	}
+	
+	#Fascism#
+	
+	focus = {
+		id = PER_order
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = PER_discuss_authority}
+		prerequisite = { focus = PER_punishment}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+			focus = PER_tradition
+		}			
+		
+		x = 8
+		y = 3
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_ideas = nationalism
+		}
+	}
+	
+	focus = {
+		id = PER_coup_detat
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = PER_order}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+			focus = PER_tradition
+		}			
+		
+		x = 9
+		y = 4
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	
+	focus = {
+		id = PER_launch_the_30_day_offensive
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = PER_coup_detat}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 10
+		y = 5
+		
+		cost = 2.2
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	
+	focus = {
+		id = PER_fascist_request_assistance
+		icon = GFX_goal_generic_axis_build_infantry
+		prerequisite = { focus = PER_coup_detat}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 8
+		y = 5
+		
+		cost = 2.2
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	
+	focus = {
+		id = PER_secure_the_new_state
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = PER_launch_the_30_day_offensive focus = PER_fascist_request_assistance}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 9
+		y = 6
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	
+	#both fascism and monarchism#
+	
+	focus = {
+		id = PER_iranian_nationalism
+		icon = GFX_focus_PER_flag
+		prerequisite = { focus = PER_tradition focus = PER_order}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 5
+		y = 4
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_ideas = PER_iranian_nationalism_idea
+		}
+	}
+	
+	focus = {
+		id = PER_military_youth
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = PER_iranian_nationalism}
+		prerequisite = { focus = PER_order}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 6
+		y = 5
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_ideas = military_youth_focus
+		}
+	}
+	
+	focus = {
+		id = PER_royal_military
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = PER_iranian_nationalism}
+		prerequisite = { focus = PER_tradition}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 4
+		y = 5
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_ideas = PER_royal_military_idea
+		}
+	}
+	
+	focus = {
+		id = PER_iranian_ambition
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = PER_military_youth focus = PER_royal_military}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 5
+		y = 6
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			custom_effect_tooltip = PER_iranian_ambition_tooltip
+		}
+	}
+	#keep the monarchy#
+	
+	focus = {
+		id = PER_tradition
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = PER_discuss_authority}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+			focus = PER_order
+		}			
+		
+		x = 2
+		y = 3
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_ideas = PER_tradition_idea
+		}
+	}
+	
+	focus = {
+		id = PER_strengthen_the_shah
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = PER_tradition}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 1
+		y = 4
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 50
+			swap_ideas = {
+				add_idea = PER_strengthen_the_shah_idea
+				remove_idea = PER_tradition_idea
+			}
+		}
+	}
+	
+	focus = {
+		id = PER_british_support
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = PER_strengthen_the_shah}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 0
+		y = 5
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			ENG = {
+				country_event = { id = persiaft.11 days = 1 }
+				custom_effect_tooltip = needs_approval
+			}
+			# Actual reward effects added in event if British approve
+			effect_tooltip = {
+				ENG = {
+					add_political_power = -25
+				}
+				add_political_power = 25
+				add_stability = 0.10
+			}		
+		}
+	}
+	
+	focus = {
+		id = PER_sanctuary_for_jews
+		icon = GFX_focus_research
+		prerequisite = { focus = PER_strengthen_the_shah}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 2
+		y = 5
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = PER_second_cyrus
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = PER_sanctuary_for_jews focus = PER_british_support}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 1
+		y = 6
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	
+	###Democracy/Communism###
+
+	focus = {
+		id = PER_minority_rights
+		icon = GFX_focus_generic_concessions
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+			focus = PER_subdue_iraqis
+		}			
+		
+		x = 14
+		y = 0
+		
+		cost = 5
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.05
+			remove_ideas = PER_iraqi_unrest
+		}
+	}
+
+	focus = {
+		id = PER_discuss_freedom
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = PER_minority_rights}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 17
+		y = 2
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 120
+			add_stability = 0.05
+		}
+	}
+	
+	#Communism#
+	
+	focus = {
+		id = PER_equality
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = PER_discuss_freedom}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+			focus = PER_liberty
+		}			
+		
+		x = 20
+		y = 3
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_ideas = internationalism
+		}
+	}
+	
+	focus = {
+		id = PER_liberty
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = PER_discuss_freedom}
+		prerequisite = { focus = PER_light_sentences}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+			focus = PER_equality
+		}			
+		
+		x = 14
+		y = 3
+		
+		cost = 10
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+	
+	###Middle Path###
+
+	focus = {
+		id = PER_kurdish_threat
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = PER_minority_rights focus = PER_subdue_iraqis}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 11
+		y = 1
+		
+		cost = 4.3
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			country_event = { hours = 3 id = persiaft.0 }
+		}
+	}
+
+	focus = {
+		id = PER_punishment
+		icon = GFX_focus_CZE_german_puppet
+		prerequisite = { focus = PER_kurdish_threat}
+
+		available = {
+			always = no
+		}
+		
+		bypass = {
+			has_country_flag = harsh_punishments
+		}
+		
+		mutually_exclusive = {
+			focus = PER_light_sentences
+		}			
+		
+		x = 10
+		y = 2
+		
+		cost = 0
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = PER_light_sentences
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = PER_kurdish_threat}
+
+		available = {
+			always = no
+		}
+		
+		bypass = {
+			has_country_flag = light_sentences
+		}
+		
+		mutually_exclusive = {
+			focus = PER_light_sentences
+		}			
+		
+		x = 12
+		y = 2
+		
+		cost = 0
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+		}
+	}
+
+	focus = {
+		id = PER_azerbaijani_threat
+		icon = GFX_goal_demand_sudetenland
+		prerequisite = { focus = PER_kurdish_threat}
+
+		available = {
+		}
+		
+		bypass = {
+		}
+		
+		mutually_exclusive = {
+		}			
+		
+		x = 11
+		y = 3
+		
+		cost = 2.9
+		
+		#ai_will_do = {
+		#	factor = 1
+		#}
+
+		available_if_capitulated = yes
+
+
+		completion_reward = {
+			country_event = { hours = 3 id = persiaft.9 }
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

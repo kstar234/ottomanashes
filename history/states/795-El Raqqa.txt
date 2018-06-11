@@ -3,10 +3,16 @@ state={
 	name="STATE_795"
 	manpower = 200110
 	
-	state_category = town
+	state_category = extremely_sparse
 
 	history={
 		owner = ALE
+		victory_points = {
+			1606 8 
+		}
+		victory_points = {
+			13219 1 
+		}
 		buildings = {
 			infrastructure = 2
 		}

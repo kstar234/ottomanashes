@@ -4,11 +4,10 @@ state={
 	name="STATE_552"
 	manpower = 26539
 	
-	state_category = wasteland
-	impassable = yes
+	state_category = utterly_sparse
 
 	history={
-		owner = ENG
+		owner = EGY
 		buildings = {
 			infrastructure = 0
 		}

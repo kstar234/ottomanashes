@@ -1,0 +1,32 @@
+
+state={
+	id=558
+	name="STATE_558"
+	resources={
+		rubber=2.000
+	}
+
+	history={
+		owner = SOK
+		add_core_of = SOK
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			8021 3 
+		}
+		victory_points = {
+			4972 2 
+		}
+
+	}
+
+	provinces={
+		1891 1932 1969 2025 4938 4972 4997 5028 8021 8109 10820 13138 
+	}
+	manpower=8057000
+	buildings_max_level_factor=1.000
+	state_category=extremely_dense
+}

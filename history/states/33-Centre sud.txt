@@ -4,13 +4,14 @@ state={
 	name="STATE_33"
 	manpower = 636400
 	
-	state_category = town
+	state_category = very_sparse
 
 	history={
 		owner = BOR
 		
 		buildings = {
 			infrastructure = 6
+			industrial_complex = 1
 		}
 		add_core_of = FRA
 		add_core_of = BOR

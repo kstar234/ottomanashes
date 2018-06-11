@@ -20,6 +20,12 @@ set_technology = {
 	early_submarine = 1
 }
 
+set_country_flag = westernization_1_completed_flag
+set_country_flag = completed_industry_flag
+set_country_flag = completed_modern_flag
+set_country_flag = completed_diplo_flag
+set_country_flag = westernization_5_completed_flag
+
 set_politics = {
 
 	parties = {
@@ -33,6 +39,11 @@ set_politics = {
 			popularity = 34
 		}
 	}
+	
+	ruling_party = fascism
+	last_election = "1935.11.14"
+	election_frequency = 48
+	elections_allowed = no
 }
 
 create_country_leader = {

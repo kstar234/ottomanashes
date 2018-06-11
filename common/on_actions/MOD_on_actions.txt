@@ -1,8 +1,17 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			#Opinion Modifiers Setup
-			#every_country = { news_event = news.1000 }
+			every_country = {
+				country_event = wia.0
+			}
+			FRA = {
+				country_event = nasi.0
+			}
+		}
+	}
+	on_new_term_election = {
+		random_events = {
+			100 = modusa.103
 		}
 	}
 }

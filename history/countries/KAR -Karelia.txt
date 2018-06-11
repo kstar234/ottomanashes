@@ -1,0 +1,76 @@
+﻿capital = 216
+
+#oob = "YUG_1936"
+
+set_research_slots = 2
+
+set_stability = 0.5
+set_war_support = 0.7
+
+set_technology = {
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	early_fighter = 1
+	gwtank = 1
+	basic_light_tank = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	early_submarine = 1
+}
+
+set_country_flag = westernization_1_completed_flag
+set_country_flag = completed_modern_flag
+
+set_convoys = 20
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 10
+		}
+
+		fascism = {
+			popularity = 0
+		}
+		
+		communism = {
+			popularity = 30
+			#banned = no #default is no
+		}
+		
+		neutrality = { 
+			popularity = 60
+		}
+	}
+	
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 36
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Arvo Manner"
+	desc = ""
+	picture = "gfx/leaders/KAR/arvo.tga"
+	expire = "1962.4.11"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Alexander Frederick"
+	desc = ""
+	picture = "gfx/leaders/KAR/alexander.tga"
+	expire = "1965.1.1"
+	ideology = Despotism
+	traits = {
+		#
+	}
+}

@@ -3,10 +3,13 @@ state={
 	name="STATE_794"
 	manpower = 30110
 	
-	state_category = wasteland
+	state_category = utterly_sparse
 
 	history={
 		owner = ALE
+		victory_points = {
+			10882 1 
+		}
 		buildings = {
 			infrastructure = 2
 		}

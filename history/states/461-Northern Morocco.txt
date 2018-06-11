@@ -4,10 +4,10 @@ state={
 	name="STATE_461"
 	manpower = 3000000
 	
-	state_category = rural
+	state_category = very_dense
 	
 	history={
-		owner = FRA
+		owner = SPR
 
 		victory_points = {
 			7069 10 

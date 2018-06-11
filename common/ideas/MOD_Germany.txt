@@ -1,0 +1,269 @@
+ideas = {
+	country = {
+		general_staff = {
+			
+			allowed = {
+				original_tag = GER
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				army_org_Factor = 0.05
+				planning_speed = 0.25
+				army_leader_start_level = 1
+			}
+		}
+
+		army_with_a_state = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_reserve_divisions
+			
+			modifier = {
+				special_forces_cap = 0.02
+				army_defence_factor = 0.05
+				army_attack_factor = 0.05
+				army_speed_factor = 0.10
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		german_nationalism = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = triumphant_will
+			
+			modifier = {
+				drift_defence_factor = 0.5
+				conscription_factor = 0.10
+				war_support_factor = 0.05
+				stability_factor = -0.10
+			}
+			rule = {
+				can_create_factions = yes
+			}
+		}
+
+		memories_holland = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = prc_low_popular_support2
+			
+			modifier = {
+				war_support_factor = -0.1
+			}
+		}
+	}
+	
+	head_of_government = {
+		franz_von_papen_hog = {
+			allowed = {original_tag = GER}
+			available = {
+			}
+			traits = {
+			}
+			cancel_if_invalid = no
+			
+			picture = franz_von_papen
+
+			cost = 150
+		}
+		
+		neurath_hog = {
+			allowed = {original_tag = GER}
+			available = {
+			}
+			traits = {
+			}
+			cancel_if_invalid = no
+			
+			picture = neurath_idea
+
+			cost = 150
+		}
+	}
+	
+	foreign_minister = {
+		richard_von_kuhlmann_fm = {
+			allowed = {original_tag = GER}
+			available = {
+				date < 1948.5.26
+			}
+			traits = {
+			}
+			cancel_if_invalid = yes
+			
+			picture = richard_von_kuhlmann_idea
+
+			cost = 150
+		}
+		
+		ribbentrop_fm = {
+			allowed = {original_tag = GER}
+			available = {
+			}
+			traits = {
+				business_minister
+			}
+			cancel_if_invalid = no
+			
+			picture = ribbentrop_idea
+
+			cost = 150
+		}
+	}
+	
+	minister_national_defense = {
+		adolf_hitler_mnd = {
+			allowed = {original_tag = GER}
+			available = {
+			}
+			traits = {
+			strategic_genius
+			tactical_incompetence
+			}
+			cancel_if_invalid = no
+			
+			picture = hitler_idea
+
+			cost = 150
+		}
+		
+		wilhelm_keitel_mnd = {
+			allowed = {original_tag = GER}
+			available = {
+			}
+			traits = {
+			}
+			cancel_if_invalid = no
+			
+			picture = keitel_idea
+
+			cost = 150
+		}
+	}
+	
+	economy_minister = {
+		hjalmar_schacht_em  = {
+			allowed = {original_tag = GER}
+			available = {
+			}
+			traits = {
+				democratic_economist
+			}
+			cancel_if_invalid = no
+			
+			picture = hjalmar_idea
+
+			cost = 150
+		}
+		
+		bernhard_dernburg_em  = {
+			allowed = {original_tag = GER}
+			available = {
+				date < 1937.10.14
+			}
+			traits = {
+				financial_analyst
+			}
+			cancel_if_invalid = yes
+			
+			picture = dernburg_idea
+
+			cost = 150
+		}
+		
+	}
+	
+	construction_minister = {
+		walter_hohmann_cm = {
+			allowed = {original_tag = GER}
+			available = {
+				has_government = neutrality
+			}
+			traits = {
+				civil_engineer
+			}
+			cancel_if_invalid = no
+			
+			picture = hohmann_idea
+
+			cost = 150
+		}
+		
+		fritz_todt_cm = {
+			allowed = {original_tag = GER}
+			available = {
+			}
+			traits = {
+				highway_engineer
+			}
+			cancel_if_invalid = no
+			
+			picture = todt_idea
+
+			cost = 175
+		}
+		
+		fritz_leanhardt_cm = {
+			allowed = {original_tag = GER}
+			available = {
+			}
+			traits = {
+				fortification_engineer
+			}
+			cancel_if_invalid = no
+			
+			picture = leonhardt_idea
+
+			cost = 150
+		}
+	}
+	
+	intel_minister = {
+		karl_jarres_im = {
+			allowed = {original_tag = GER}
+			available = {
+			}
+			traits = {
+			}
+			cancel_if_invalid = no
+			
+			picture = jarres_idea
+
+			cost = 150
+		}
+	}
+}

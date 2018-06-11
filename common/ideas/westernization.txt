@@ -1,0 +1,269 @@
+ideas = {
+	country = {
+		unfinished_industrialization = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.45
+				production_speed_buildings_factor = -0.35
+				equipment_conversion_speed = -0.25
+				industrial_capacity_factory = -0.1
+				consumer_goods_factor = 0.025
+			}
+		}
+		
+		unfinished_modernization = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.15
+				research_time_factor = 0.5
+			}
+		}
+		
+		possible_corruption = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.05
+				trade_opinion_factor = -0.2
+			}
+		}
+		
+		unfinished_diplomacy = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {
+				political_power_gain = -0.35
+				drift_defence_factor = 0.2
+				subversive_activites_upkeep = 0.1
+				join_faction_tension = 0.25
+				justify_war_goal_time = -0.1
+				generate_wargoal_tension = -0.4
+			}
+		}
+		
+		industry5 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.01
+			}
+		}
+		
+		industry6 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {				
+				production_factory_efficiency_gain_factor = 0.25
+				production_speed_buildings_factor = 0.01
+				equipment_conversion_speed = 0.05
+			}
+		}
+		
+		modern2 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {				
+				research_time_factor = -0.05
+			}
+		}
+		
+		modern3 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {				
+				political_power_gain = 0.05
+			}
+		}
+		
+		modern4 = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {				
+				political_power_gain = 0.1
+				trade_opinion_factor = 0.05
+			}
+		}
+		
+		modern_banking = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {				
+				economy_cost_factor = -0.1
+				trade_laws_cost_factor = -0.1
+			}
+		}
+		
+		modern_trade = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {				
+				trade_opinion_factor = 0.2
+				join_faction_tension = -0.05
+			}
+		}
+		
+		us_diplo = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		foreign_training = {
+			
+			allowed = {
+				always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+			
+			removal_cost = -1
+			
+			modifier = {
+				training_time_army_factor = -0.05
+			}
+		}
+		
+	}
+}

@@ -3,12 +3,10 @@ state=
 	id=596
 	name="STATE_596"
 	manpower = 21230700
-	state_category = city
+	state_category = utterly_dense
 	history=
 	{
 		owner = ANH
-		add_core_of = CHI
-		add_core_of = PRC
 		add_core_of = ANH
 		
 		victory_points = { 

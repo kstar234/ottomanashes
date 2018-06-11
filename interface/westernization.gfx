@@ -1,0 +1,51 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_westernization_button"
+		texturefile = "gfx/westernization_gui/icon.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_westernization_idea_button_unavailable"
+		texturefile = "gfx/westernization_gui/westernization_idea_button_unavailable.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_westernization_idea_button_available"
+		texturefile = "gfx/westernization_gui/westernization_idea_button_available.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_westernization_idea_button_completed"
+		texturefile = "gfx/westernization_gui/westernization_idea_button_completed.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_back_button"
+		texturefile = "gfx/westernization_gui/back.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_mutually_exclusive"
+		texturefile = "gfx/interface/mutually_exclusive.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_chose_right"
+		texturefile = "gfx/interface/chose_right.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_chose_left"
+		texturefile = "gfx/interface/left.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+}
+	
+	

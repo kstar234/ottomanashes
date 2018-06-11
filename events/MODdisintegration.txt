@@ -1,0 +1,404 @@
+﻿###########################
+# Events for Disintegrating countries
+###########################
+
+add_namespace = disintegrate
+
+#Disintegrating Country
+country_event = {
+    id = disintegrate.0
+    title = disintegrate.0.t
+    desc = disintegrate.0.d
+    picture = GFX_report_event_worker_protests
+
+    trigger = {
+		has_idea = disintegrating_country
+    }
+
+    mean_time_to_happen = {
+        days = 20
+    }
+
+    immediate = {
+    }
+
+    option = {
+        name = disintegrate.0.a
+		add_political_power = -5
+		add_stability = -0.02
+    }
+}
+
+#Georgia Declares Independence! #Transcaucasia#
+country_event = {
+    id = disintegrate.1
+    title = disintegrate.1.t
+    desc = disintegrate.1.d
+    picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+	
+    trigger = {
+		has_idea = disintegrating_country
+		tag = TRA
+		has_stability < 0.3
+    }
+
+    mean_time_to_happen = {
+        days = 60
+    }
+
+    immediate = {
+    }
+
+    option = { #Try to stabilize our country! Not destabilize it!
+        name = disintegrate.1.a
+		add_political_power = -5
+		add_stability = 0.05
+		GEO = { 
+			transfer_state = 233
+			transfer_state = 231
+		}
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			GEO = {
+				load_oob = "GEO_rebellion"
+			}
+			set_country_flag = tra_stabilize_geo
+		}
+    }
+
+    option = { #To War!
+        name = disintegrate.1.b
+		add_political_power = -50
+		add_stability = 0.10
+		add_war_support = 0.05
+		GEO = { 
+			transfer_state = 233
+			transfer_state = 231
+		}
+		declare_war_on = { target = GEO type = annex_everything }
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			GEO = {
+				load_oob = "GEO_rebellion"
+			}
+		}
+    }
+}
+
+#Armenia Declares Independence! #Transcaucasia#
+country_event = {
+    id = disintegrate.2
+    title = disintegrate.2.t
+    desc = disintegrate.2.d
+    picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+
+    trigger = {
+		has_idea = disintegrating_country
+		tag = TRA
+		has_stability < 0.25
+    }
+
+    mean_time_to_happen = {
+        days = 60
+    }
+
+    immediate = {
+    }
+
+    option = { #Try to stabilize our country! Not destabilize it!
+        name = disintegrate.2.a
+		add_political_power = -5
+		add_stability = 0.05
+		ARM = { 
+			transfer_state = 230
+		}
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			ARM = {
+				load_oob = "ARM_rebellion"
+			}
+			set_country_flag = tra_stabilize_arm
+		}
+    }
+
+    option = { #To War!
+        name = disintegrate.2.b
+		add_political_power = -50
+		add_stability = 0.05
+		add_war_support = 0.05
+		ARM = { 
+			transfer_state = 230
+		}
+		declare_war_on = { target = ARM type = annex_everything }
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			ARM = {
+				load_oob = "ARM_rebellion"
+			}
+		}
+    }
+}
+
+#Azerbaijan Declares Independence! #Transcaucasia#
+country_event = {
+    id = disintegrate.3
+    title = disintegrate.3.t
+    desc = disintegrate.3.d
+    picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+
+    trigger = {
+		has_idea = disintegrating_country
+		tag = TRA
+		has_stability < 0.25
+    }
+
+    mean_time_to_happen = {
+        days = 60
+    }
+
+    immediate = {
+    }
+
+    option = { #Try to stabilize our country! Not destabilize it!
+        name = disintegrate.3.a
+		add_political_power = -5
+		add_stability = 0.05
+		AZR = { 
+			transfer_state = 229
+			transfer_state = 828
+		}
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			AZR = {
+				load_oob = "AZR_rebellion"
+			}
+			set_country_flag = tra_stabilize_azr
+		}
+    }
+
+    option = { #To War!
+        name = disintegrate.3.b
+		add_political_power = -50
+		add_stability = 0.05
+		add_war_support = 0.05
+		AZR = { 
+			transfer_state = 229
+			transfer_state = 828
+		}
+		declare_war_on = { target = AZR type = annex_everything }
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			AZR = {
+				load_oob = "AZR_rebellion"
+			}
+		}
+    }
+}
+
+##################PEACE DEALS###################
+
+#Transcaucasia needs peace deal with georgia
+country_event = {
+    id = disintegrate.4
+    title = disintegrate.4.t
+    desc = disintegrate.4.d
+    picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+
+    trigger = {
+		tag = TRA
+		has_stability < 0.2
+		OR = {
+			GEO = { controls_state = 234 }
+			GEO = { controls_state = 232 }
+		}
+    }
+
+    mean_time_to_happen = {
+        days = 14
+    }
+
+    immediate = {
+    }
+
+    option = { #Send them a proposal for a white peace
+        name = disintegrate.4.a
+		add_political_power = -20
+		add_stability = 0.05
+		GEO = { 
+			country_event = { days = 1 id = geo.0 }
+		}
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			set_country_flag = tra_white_peace_proposal_geo
+		}
+    }
+
+    option = { #Continue War!
+        name = disintegrate.4.b
+		add_political_power = -50
+		add_stability = 0.05
+		add_war_support = 0.15
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			set_country_flag = tra_continue_war_geo
+		}
+    }
+}
+
+#Transcaucasia needs peace deal with armenia
+country_event = {
+    id = disintegrate.5
+    title = disintegrate.5.t
+    desc = disintegrate.5.d
+    picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+
+    trigger = {
+		tag = TRA
+		has_stability < 0.2
+		OR = {
+			has_country_flag = tra_white_peace_proposal_geo
+			has_country_flag = tra_continue_war_geo
+		}
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    immediate = {
+    }
+
+    option = { #Send them a proposal for a white peace
+        name = disintegrate.5.a
+		add_political_power = -20
+		add_stability = 0.05
+		ARM = { 
+			country_event = { days = 1 id = armenia.0 }
+		}
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			set_country_flag = tra_white_peace_proposal_arm
+		}
+    }
+
+    option = { #Continue War!
+        name = disintegrate.5.b
+		add_political_power = -50
+		add_stability = 0.05
+		add_war_support = 0.15
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			set_country_flag = tra_continue_war_arm
+		}
+    }
+}
+
+#Transcaucasia needs peace deal with azerbaijan
+country_event = {
+    id = disintegrate.6
+    title = disintegrate.6.t
+    desc = disintegrate.6.d
+    picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+
+    trigger = {
+		tag = TRA
+		has_stability < 0.2
+		country_exists = AZR
+		OR = {
+			has_country_flag = tra_white_peace_proposal_geo
+			has_country_flag = tra_continue_war_geo
+		}
+    }
+
+    mean_time_to_happen = {
+        days = 5
+    }
+
+    immediate = {
+    }
+
+    option = { #Send them a proposal for a white peace
+        name = disintegrate.6.a
+		add_political_power = -20
+		add_stability = 0.05
+		AZR = { 
+			country_event = { days = 1 id = azr.0 }
+		}
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+		}
+    }
+
+    option = { #Continue War!
+        name = disintegrate.6.b
+		add_political_power = -50
+		add_stability = 0.05
+		add_war_support = 0.15
+		hidden_effect = {
+			#news_event = { hours = 6 id = irannews.0 }
+			set_country_flag = tra_continue_war_azr
+		}
+    }
+}
+
+#Transcaucasia not in disintegration anymore
+country_event = {
+    id = disintegrate.7
+    title = disintegrate.7.t
+    desc = disintegrate.7.d
+    picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+
+    trigger = {
+		tag = TRA
+		country_exists = GEO
+		country_exists = ARM
+		OR = {
+			OR = {
+			has_country_flag = tra_white_peace_proposal_geo
+			has_country_flag = tra_white_peace_proposal_arm
+			has_country_flag = tra_white_peace_proposal_azr
+			}
+			AND = {
+			has_country_flag = tra_stabilize_azr
+			has_country_flag = tra_stabilize_arm
+			has_country_flag = tra_stabilize_azr
+			}
+		}
+    }
+
+    mean_time_to_happen = {
+        days = 7
+    }
+
+    immediate = {
+    }
+
+    option = { #We finally are free of this
+        name = disintegrate.7.a
+		remove_ideas = disintegrating_country
+		#TRA = { 
+		#	country_event = { days = 1 id = tra.0 }
+		#}
+		hidden_effect = {
+			RUS = { 
+				country_event = { days = 1 id = russia.0 }
+			}
+			#news_event = { hours = 6 id = irannews.0 }
+			set_country_flag = tra_end_disintegration
+		}
+    }
+}

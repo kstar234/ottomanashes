@@ -1,30 +1,53 @@
 spriteTypes = {
 
 	spriteType = {
-		name = "GFX_news_event_1000"
-		texturefile = "gfx/event_pictures/news_event_1000.dds"
+		name = "GFX_news_event_500"
+		texturefile = "gfx/event_pictures/news_event_500.dds"
 	}
 	spriteType = {
-		name = "GFX_report_event_turkish_retreat"
-		texturefile = "gfx/event_pictures/report_event_turkish_retreat.dds"
+		name = "GFX_FRA_broken_truce"
+		texturefile = "gfx/event_pictures/broken_truce_FRA.dds"
 	}
 	spriteType = {
-		name = "GFX_report_event_train_women"
-		texturefile = "gfx/event_pictures/report_event_train_women.dds"
+		name = "GFX_FRA_what_to_do"
+		texturefile = "gfx/event_pictures/FRA_what_to_do.dds"
 	}
 	spriteType = {
-		name = "GFX_report_event_joint_army"
-		texturefile = "gfx/event_pictures/report_event_joint_army.dds"
+		name = "GFX_news_event_501"
+		texturefile = "gfx/event_pictures/news_event_501.dds"
 	}
 	spriteType = {
-		name = "GFX_report_event_national_guard"
-		texturefile = "gfx/event_pictures/report_event_national_guard.dds"
+		name = "GFX_news_event_502"
+		texturefile = "gfx/event_pictures/news_event_502.dds"
 	}
 	spriteType = {
-		name = "GFX_report_event_syrian_crossover"
-		texturefile = "gfx/event_pictures/report_event_syrian_crossover.dds"
+		name = "GFX_FRA_do_it_ourselves"
+		texturefile = "gfx/event_pictures/FRA_do_it_ourselves.dds"
+	}
+	spriteType = {
+		name = "GFX_eskubi"
+		texturefile = "gfx/event_pictures/eskubi.dds"
+	}
+	spriteType = {
+		name = "GFX_captain_gen"
+		texturefile = "gfx/event_pictures/captain_gen.dds"
+	}
+	spriteType = {
+		name = "GFX_strat"
+		texturefile = "gfx/event_pictures/strat.dds"
+	}
+	spriteType = {
+		name = "GFX_semppu"
+		texturefile = "gfx/event_pictures/semppu.dds"
+	}
+	spriteType = {
+		name = "GFX_kstar"
+		texturefile = "gfx/event_pictures/kstar.dds"
+	}
+	spriteType = {
+		name = "GFX_wia"
+		texturefile = "gfx/event_pictures/wia.dds"
 	}
 }
-	#### END DoD EVENTS ####
 	
 	

@@ -130,5 +130,64 @@ spriteTypes = {
 		name = "GFX_sefik"
 		texturefile = "gfx/interface/goals/sefik.dds"
 	}
-
+	spriteType = {
+		name = "GFX_focus_PER_flag"
+		textureFile = "gfx/interface/goals/focus_PER_flag.dds"			
+	}	
+	spriteType = {
+		name = "GFX_focus_generic_govt"
+		textureFile = "gfx/interface/goals/focus_generic_govt.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_election"
+		textureFile = "gfx/interface/goals/focus_USA_election.dds"			
+	}	
+	spriteType = {
+		name = "GFX_focus_generic_election"
+		textureFile = "gfx/interface/goals/focus_generic_election.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_republican_primary"
+		textureFile = "gfx/interface/goals/focus_USA_republican_primary.dds"			
+	}	
+	spriteType = {
+		name = "GFX_focus_USA_democratic_primary"
+		textureFile = "gfx/interface/goals/focus_USA_democratic_primary.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_james_wadsworth"
+		textureFile = "gfx/interface/goals/focus_USA_james_wadsworth.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_thomas_dewey"
+		textureFile = "gfx/interface/goals/focus_USA_thomas_dewey.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_franklin_roosevelt"
+		textureFile = "gfx/interface/goals/focus_USA_franklin_roosevelt.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_god"
+		textureFile = "gfx/interface/goals/focus_USA_god.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_flag"
+		textureFile = "gfx/interface/goals/focus_USA_flag.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_clamp_down_on_corruption"
+		textureFile = "gfx/interface/goals/focus_USA_clamp_down_on_corruption.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_new_deal"
+		textureFile = "gfx/interface/goals/focus_USA_new_deal.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_second_new_deal"
+		textureFile = "gfx/interface/goals/focus_USA_second_new_deal.dds"			
+	}
+	spriteType = {
+		name = "GFX_focus_USA_better_deal"
+		textureFile = "gfx/interface/goals/focus_USA_better_deal.dds"			
+	}
 }
